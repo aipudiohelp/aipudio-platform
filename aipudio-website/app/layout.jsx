@@ -6,6 +6,9 @@ const cairo = Cairo({
   weight: ['400', '600', '700', '800', '900'],
   display: 'swap',
   variable: '--font-cairo',
+  fontFamily: {
+  sans: ['var(--font-cairo)', 'sans-serif'],
+},
 })
 
 export const metadata = {
