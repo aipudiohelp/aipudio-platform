@@ -1,3 +1,5 @@
+'use client'
+
 import { SITE_DATA } from '@/data/siteData'
 
 export default function Navbar() {
@@ -5,20 +7,20 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#07090E]/85 border-b border-white/5 px-4 sm:px-8 py-3 transition-all">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
-        {/* لوجو Aipudio المحدث */}
+        {/* شعار Aipudio */}
         <a href="#" className="flex items-center gap-3 group">
           <div className="relative w-10 h-10 rounded-2xl bg-gradient-to-tr from-purple-600/40 to-cyan-500/30 p-0.5 border border-white/10 group-hover:border-purple-500/50 transition flex items-center justify-center overflow-hidden shadow-lg shadow-purple-900/30">
-            {/* الشعار من ملف public/logo.png مع fallback نصي فخم */}
             <img
               src={SITE_DATA.brand.logoSrc}
               alt={SITE_DATA.brand.name}
               className="w-full h-full object-contain p-1 drop-shadow"
               onError={(e) => {
-                e.target.style.display = 'none'
-                e.target.nextSibling.style.display = 'block'
+                e.currentTarget.style.display = 'none'
+                const fallback = e.currentTarget.parentElement?.querySelector('.logo-fallback')
+                if (fallback) fallback.classList.remove('hidden')
               }}
             />
-            <span className="hidden font-black text-white text-base tracking-tighter">Ai</span>
+            <span className="logo-fallback hidden font-black text-white text-base tracking-tighter">Ai</span>
           </div>
           <div>
             <span className="font-black text-lg text-white block tracking-wide group-hover:text-cyan-300 transition">
