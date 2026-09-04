@@ -8,9 +8,9 @@ export default function Portfolio() {
 
   const tabs = [
     { key: 'all', label: 'الكل' },
+    { key: 'gadgets', label: 'أنظمة وSaaS' },
     { key: 'medical', label: 'طبي وتجميل' },
-    { key: 'fashion', label: 'أزياء وملابس' },
-    { key: 'gadgets', label: 'أجهزة وأدوات' },
+    { key: 'fashion', label: 'أزياء وموضة' },
     { key: 'education', label: 'تعليم وأكاديميات' },
   ]
 
@@ -47,19 +47,36 @@ export default function Portfolio() {
         {filteredPortfolio.map((item) => (
           <div
             key={item.id}
-            className="rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden flex flex-col justify-between group hover:border-purple-500/50 transition"
+            className="rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden flex flex-col justify-between group hover:border-purple-500/60 transition shadow-xl"
           >
-            <div className={`aspect-[9/16] bg-gradient-to-b ${item.bgGradient} p-4 flex flex-col justify-between relative`}>
-              <div className="flex justify-between items-center">
-                <span className="text-[10px] bg-black/50 border border-white/20 px-2 py-0.5 rounded-full text-white font-bold">{item.country}</span>
-                <span className="text-[10px] bg-purple-600 text-white px-2 py-0.5 rounded-full font-bold">{item.badge}</span>
-              </div>
-              <div className="space-y-1">
-                <span className="text-xs font-black text-white block">{item.title}</span>
-                <p className="text-[10px] text-slate-300">{item.tagline}</p>
+            {/* مشغل الفيديو العمودي للريلز */}
+            <div className="aspect-[9/16] relative overflow-hidden bg-black">
+              <video
+                src={item.videoSrc}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-4 flex flex-col justify-between pointer-events-none">
+                <div className="flex justify-between items-center">
+                  <span className="text-[10px] bg-black/60 backdrop-blur-xs border border-white/20 px-2 py-0.5 rounded-full text-white font-bold">
+                    {item.country}
+                  </span>
+                  <span className="text-[10px] bg-purple-600 text-white px-2 py-0.5 rounded-full font-bold shadow">
+                    {item.badge}
+                  </span>
+                </div>
+                <div className="space-y-1">
+                  <span className="text-xs font-black text-white block">{item.title}</span>
+                  <p className="text-[10px] text-slate-300 line-clamp-2">{item.tagline}</p>
+                </div>
               </div>
             </div>
-            <div className="p-4 border-t border-white/5 bg-[#0C101A]">
+
+            <div className="p-3.5 border-t border-white/5 bg-[#0C101A]">
               <span className="text-[11px] font-mono text-cyan-400 font-bold block">{item.stats}</span>
             </div>
           </div>
