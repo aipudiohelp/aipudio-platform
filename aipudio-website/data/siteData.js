@@ -6,6 +6,13 @@ export const SITE_DATA = {
     lpUrl: 'https://lp.aipudio.online',
     logoSrc: '/logo.png',
   },
+    socials: {
+    facebook: 'https://www.facebook.com/share/1BnCSXSAec/',
+    instagram: 'https://www.instagram.com/aipudio?igsi=MXI0ZDI3bWR3cDRrZg==',
+    tiktok: 'https://www.tiktok.com/@aipudio?_r=1&_t=ZS-99SwlCcIeI8',
+    youtube: 'https://youtube.com/@aipudio?si=0-cTasPM80bCkWLU',
+    telegram: 'https://t.me/aipudio',
+  },
   
   stats: [
     { value: '+10M', label: 'مشاهدة حققتها إعلاناتنا' },
