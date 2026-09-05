@@ -48,7 +48,6 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  // ضع رقم بكسل فيسبوك الخاص بك هنا إن وجد
   const FB_PIXEL_ID = 'YOUR_PIXEL_ID_HERE'
 
   return (
@@ -82,11 +81,26 @@ export default function RootLayout({ children }) {
             alt="facebook-pixel"
           />
         </noscript>
+
+        {/* تتبع مايكروسوفت كلاريتي (Microsoft Clarity) */}
+        <Script
+          id="microsoft-clarity"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "ydr9s7xewt");
+            `,
+          }}
+        />
       </head>
       <body className="bg-[#07090E] text-slate-100 antialiased font-sans">
         {children}
         
-        {/* كود تحليلات Vercel التلقائي */}
+        {/* كود تحليلات Vercel */}
         <Analytics />
       </body>
     </html>
