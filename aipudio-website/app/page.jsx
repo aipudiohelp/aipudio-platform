@@ -9,10 +9,11 @@ import Workflow from '@/components/Workflow'
 import Pricing from '@/components/Pricing'
 import FAQ from '@/components/FAQ'
 import Footer from '@/components/Footer'
+import FloatingWhatsApp from '@/components/FloatingWhatsApp'
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#07090E] text-slate-100">
+    <main className="min-h-screen bg-[#07090E] text-slate-100 relative selection:bg-purple-600 selection:text-white">
       <Navbar />
       <Hero />
       <StatsBar />
@@ -22,6 +23,9 @@ export default function HomePage() {
       <Pricing />
       <FAQ />
       <Footer />
+
+      {/* زر الواتساب العائم الذكي */}
+      <FloatingWhatsApp />
     </main>
   )
 }
