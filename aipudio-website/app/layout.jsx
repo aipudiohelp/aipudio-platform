@@ -1,4 +1,5 @@
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 
 export const metadata = {
@@ -25,7 +26,7 @@ export const metadata = {
     siteName: 'Aipudio',
     images: [
       {
-        url: '/logo.png', // صورة الكارت عند مشاركة الرابط
+        url: '/logo.png',
         width: 1200,
         height: 630,
         alt: 'Aipudio Growth & Tech Ecosystem',
@@ -47,13 +48,13 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  // ضع رقم البيكسل الخاص بك هنا
+  // ضع رقم بكسل فيسبوك الخاص بك هنا إن وجد
   const FB_PIXEL_ID = 'YOUR_PIXEL_ID_HERE'
 
   return (
     <html lang="ar" dir="rtl">
       <head>
-        {/* كود Meta Pixel الرسمي */}
+        {/* تتبع فيسبوك (Meta Pixel) */}
         <Script
           id="fb-pixel"
           strategy="afterInteractive"
@@ -84,6 +85,9 @@ export default function RootLayout({ children }) {
       </head>
       <body className="bg-[#07090E] text-slate-100 antialiased font-sans">
         {children}
+        
+        {/* كود تحليلات Vercel التلقائي */}
+        <Analytics />
       </body>
     </html>
   )
