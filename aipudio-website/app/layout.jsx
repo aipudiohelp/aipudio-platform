@@ -48,7 +48,7 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  const FB_PIXEL_ID = 'YOUR_PIXEL_ID_HERE'
+  const FB_PIXEL_ID = '26761924540141738'
 
   return (
     <html lang="ar" dir="rtl">
