@@ -3,6 +3,7 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import StatsBar from '@/components/StatsBar'
+import Pillars from '@/components/Pillars'
 import Services from '@/components/Services'
 import Portfolio from '@/components/Portfolio'
 import Workflow from '@/components/Workflow'
@@ -17,6 +18,10 @@ export default function HomePage() {
       <Navbar />
       <Hero />
       <StatsBar />
+      
+      {/* محاور القيمة والشراكة مع الأنشطة الصاعدة */}
+      <Pillars />
+
       <Services />
       <Portfolio />
       <Workflow />
